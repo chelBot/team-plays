@@ -1,113 +1,547 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadershipt & Culture Playlist</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    <div class="header-wrapper">
-        <header>
-            <div>
-                <h1>Leadership & Culture</h1>
-            </div>
-        </header>
-        <nav>
-            <p>What is this and how does it relate to People Foundations? Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae! </p> 
-            <p>
-                View our <a id="dev-link" href="#develop">Self Development</a>, <a id="team-link" href="#collaborate">Team Collaboration</a>, <a id="lead-link" href="#lead">People Leadership</a> playlists below! 
-            </p>
-        </nav>
+<div class="html">
+    <div class="head">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team Plays</title>
+        <style>
+            html, .body, div, span, applet, object, iframe,
+            h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+            a, abbr, acronym, address, big, cite, code,
+            del, dfn, em, img, ins, kbd, q, s, samp,
+            small, strike, strong, sub, sup, tt, var,
+            b, u, i, center,
+            dl, dt, dd, ol, ul, li,
+            fieldset, form, label, legend,
+            table, caption, tbody, tfoot, thead, tr, th, td,
+            article, aside, canvas, details, embed, 
+            figure, figcaption, footer, header, hgroup, 
+            menu, nav, output, ruby, section, summary,
+            time, mark, audio, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font: inherit;
+                vertical-align: baseline;
+            }
+            /* HTML5 display-role reset for older browsers */
+            article, aside, details, figcaption, figure, 
+            footer, header, hgroup, menu, nav, section {
+                display: block;
+            }
+
+            ol, ul {
+                list-style: none;
+            }
+            blockquote, q {
+                quotes: none;
+            }
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+
+            /* apply a natural box layout model to all elements, but allowing components to change */
+            html {
+                -webkit-box-sizing: border-box;
+                        box-sizing: border-box;
+                font-size: 62.5%;
+            }
+            *, *:before, *:after {
+                -webkit-box-sizing: inherit;
+                        box-sizing: inherit;
+            }
+
+            /* cornerstone reset */
+            .widgetDropped {
+                margin: 0;
+            }
+
+            #mainContainer {
+                padding: 0 !important;
+            }
+            
+            div#ctl00_pnlBR {
+                height: 0;
+            }
+            /********** Mobile-First: Base Style ***********/
+            :root {
+                --grad-one: linear-gradient(150deg, rgba(0,119,192,1) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
+                --primary-blue: #2062AF;
+                --primary-purple: #6F2C91;  
+                --primary-pink: #A52868;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .body {
+                line-height: 1.5;
+                font-size: 1.6rem;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #424242;
+
+            }
+
+            .header {
+                padding: 3.5rem;
+                background: #0077C0;
+                color: #fff;
+            }
+
+            main {
+                padding: 0 3.5rem;
+            }
+
+            .nav,
+            h1 {
+                padding: 3.5rem;
+            }
+
+            .nav a {
+                font-weight: bolder;
+            }
+
+            .nav a:hover {
+                background: linear-gradient(150deg, rgba(0,119,192,1) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
+                background: var(--grad-one);
+                color: #fff !important;
+            }
+
+            .nav p {
+                margin-top: 2rem;
+            }
+
+            #teaming-link {
+                color: #0077C0;
+            }
+
+            #empathizing-link {
+                color: #4156A6
+            }
+
+
+            #communicating-link {
+                color:#6F2C91;
+            }
+
+            #belonging-link {
+                color: #9D2872;
+            }
+
+            h1 {
+                font-size: 3.5rem;
+                font-weight: bolder;
+                padding: 0;
+            }
+
+            h2 {
+                font-size: 4rem;
+            }
+
+            h3 {
+                font-size: 2.5rem;
+            }
+
+            h4 {
+                font-size: 2rem;
+            }
+
+            h1, h2, h3 {
+                line-height: 1;
+            }
+
+            .playlist {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                padding-bottom: 1rem;
+            }
+
+            .page-end {
+                margin-bottom: 30rem;
+            }
+
+            .cards .modal__trigger {
+                position: relative;
+                float: left;
+                margin: 0.6rem;
+                height: 24rem;
+                text-decoration: none;
+                padding: 2rem;
+                color: white;
+                border-radius: 10px;
+            }
+
+            .cards h3 {
+                font-weight: bolder;
+                color: white;
+            }
+
+            .cards p {
+                padding-top: 0.5rem;
+                line-height: 1.3;
+                font-size: 1.6rem;
+            }
+
+            #teaming a {
+                background: #0077C0;
+            }
+
+            #teaming h2 {
+                color:#0077C0;
+                margin-top: 0;
+            }
+
+            #empathizing a {
+                background: #4156A6; 
+            }
+
+            #empathizing h2 {
+                color: #4156A6;
+            }
+
+            #communicating a {
+                background:#6F2C91;
+            }
+
+            #communicating h2 {
+                color:#6F2C91;
+            }
+
+            #belonging a {
+                background:#9D2872;
+            }
+
+            #belonging h2 {
+                color:#9D2872;
+            }
+
+            .cards a:first-child {
+                margin-left: 0;
+            }
+
+            .cards .modal__trigger:hover {
+                background: linear-gradient(150deg, rgb(51, 141, 197) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%) !important;
+                background: var(--grad-one) !important;
+            }
+
+            .start-btn {
+                position: absolute;
+                bottom: 2.2rem;
+                width: 80%;
+                margin-top: 1rem;
+                padding: 1rem;
+                border: 0.2rem #fff solid;
+                border-radius: 1rem;
+                text-align: center;
+                font-size: 1.6rem;
+                font-weight: bold;
+            }
+
+            /********** Desktop ***********/
+            @media (min-width: 970px) {
+                .body {
+                    font-size: 2rem;
+                }
+                
+                main,
+                .nav,
+                .header div {
+                    width: 100rem;
+                    margin: auto;
+                }
+
+                .nav {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
+                    height: 300px;
+                }
+
+                .header {
+                    padding: 10rem;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                }
+
+                #LC {
+                    margin-bottom: 2rem;
+                    margin-left: 0.6rem;
+                    font-size: 3rem;
+                }
+
+                h1 {
+                    font-size: 10rem;
+                    line-height: 1;
+                }
+
+                h2 {
+                    font-size: 6.315rem;
+                    margin-bottom: 1rem;
+                    margin-top: 12.5rem;
+                }
+
+                h3 {
+                    font-size: 2.5rem;
+                }
+
+                h4 {
+                    font-size: 3.554rem;
+                }
+
+                .cards {
+                    margin-top: 2rem;
+                }
+
+                .cards .modal__trigger {
+                    width: 22rem;
+                    line-height: 1;
+                }
+
+                .start-btn {
+                    margin-top: 1.6rem;
+                }
+            }
+            /* IE9+ CSS */
+            @media screen and (min-width:0\0) and (min-resolution: +72dpi) {
+
+                .nav a:hover {
+                    background: rgb(51, 141, 197);
+                    background: linear-gradient(150deg, rgb(51, 141, 197) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
+                    color: #fff !important;
+                }
+
+                .cards .modal__trigger:hover {
+                    background: rgb(51, 141, 197) !important;
+                    background: linear-gradient(150deg, rgb(51, 141, 197) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%) !important;
+                }
+
+                .playlist { 
+                    width: 90rem;
+                    margin: auto;
+                }
+
+                .cards {
+                    display: -ms-flexbox;
+                    -ms-flex-wrap: wrap;
+                }
+
+                .cards .modal__trigger {
+                    margin: 0.5rem;
+                }
+            }
+        </style>
+        
+        <link rel="stylesheet" href="main.css">
     </div>
-    <main>
-        <section class="container">
-            <div class="underline"></div>
-            <section id="develop" class="playlist">
-                <h2>Self Development</h2>
+    <div class="body">
+        <div class="header-wrapper">
+            <div class="header">
+                <div>
+                    <h1><div id="LC">Leadership & Culture</div>Team Plays</h1>
+                </div>
+            </div>
+            <div class=nav>
+                <p>What is this and how does it relate to People Foundations? Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae! </p> <br>
+                <p>
+                    Run our <a id="teaming-link" href="#teaming">Teaming</a>, <a id="empathizing-link" href="#empathizing">Empathizing</a>, <a id="communicating-link" href="#communicating">Communicating</a>,
+                    <a id="belonging-link" href="#belonging">Belonging</a> team plays below! 
+                </p>
+            </div>
+        </div>
+        <main>
+            <section id="teaming" class="playlist">
+                <h2>Teaming</h2>
                 <p>Explore your own development and impact.</p>
                 <div class="cards">
-                    <a href="#" target="_blank">
-                        <h3>Growth</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                    <a class="modal__trigger" data-modal="#modal__one" href="#!" target="_blank">
+                        <h3>Finding Purpose</h3>
+                        <p>Your self-development starts with you. Be proactive about your development by cultivating a growth mindset and creating a culture of feedback.</p>
+                        <span class="start-btn">Prepare</span>
                     </a>
-                    <a href="#" target="_blank">
-                        <h3>Flexibility</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                    <div id="modal__one" class="modal modal__bg" role="dialog" aria-hidden="true">
+                        <div class="modal__dialog">
+                            <div class="modal__content">
+                                <h1>Modal</h1>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quasi odio libero laborum? Nulla alias perspiciatis harum accusantium non reiciendis, aspernatur fuga vitae repudiandae fugit architecto impedit. Consectetur, aut saepe.</p>
+                                
+                                <!-- modal close button -->
+                                <a href="" class="modal__close demo-close">
+                                    <svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <a class="modal__trigger" data-modal="#modal__two" href="#!" target="_blank">
+                        <h3>Operating Principles</h3>
+                        <p>Set yourself up for success by finding the environment that works best for you.</p>
+                        <span class="start-btn">Prepare</span>
                     </a>
-                    <a href="#" target="_blank">
-                        <h3>Inclusion</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                    <div id="modal__two" class="modal modal__bg" role="dialog" aria-hidden="true">
+                        <div class="modal__dialog">
+                            <div class="modal__content">
+                                <h1>Operating Principles</h1>
+                                <p>How can you work together as a team more effectively from the start? <br> 
+                                    Operating Principles provide a structure for the team to draft 4-6 ground rules everyone can agree to abide by.
+                                </p>
+                                <h2>Preparation</h2>
+                                <p>This play will take <b>20 minutes</b> to complete.</p>
+                                <h3>What I need:</h3>
+                                <ul>
+                                    <li>Annotation tool on Zoom.</li>
+                                    <li><a href="">Operating Principles</a> play.</li>
+                                </ul>
+                                <h3>How to play:</h3>
+                                <ol>
+                                    <li>Schedule a 20 minute team session.</li>
+                                    <li>Review the <a href="">Operating Principles</a> play before the session. The download is editable so that you can capture the agreed ground rules.</li>
+                                    <li>Follow-up: revisit your commitment to the ground rules on a regular basis or after any changes to the team.</li>
+                                </ol>
+                                <button>PLAY</button>
+
+                                
+                                <!-- modal close button -->
+                                <a href="" class="modal__close demo-close">
+                                    <svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <a class="modal__trigger" data-modal="#modal__three" href="#" target="_blank">
+                        <h3>Ways of Working</h3>
+                        <p>Challenge your thinking and question what you can do to be more inclusive.</p>
+                        <span class="start-btn">Prepare</span>
                     </a>
-                    <a href="#" target="_blank">
-                        <h3>Culture</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                    <div id="modal__three" class="modal modal__bg" role="dialog" aria-hidden="true">
+                        <div class="modal__dialog">
+                            <div class="modal__content">
+                                <h1>Modal</h1>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non magnam asperiores praesentium perferendis molestiae saepe, nobis cum recusandae, ut velit inventore soluta. Quas eius corporis veniam sequi incidunt, perferendis repellendus!.</p>
+                                
+                                <!-- modal close button -->
+                                <a href="" class="modal__close demo-close">
+                                    <svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>Creating a Remote Culture</h3>
+                        <p>Work and communicate across cultures.</p>
+                        <span class="start-btn">Prepare</span>
                     </a>
-                    <a href="https://rise.articulate.com/share/Xv_ntK1Qq7DdkVaUZlHOeaO3-yLZALKl" target="_blank">
-                        <h3>Biases</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>Living Our Values</h3>
+                        <p>Get things done by setting productive and mindful habits.</p>
+                        <span class="start-btn">Prepare</span>
                     </a>
                 </div>
             </section>
-            <div class="underline"></div>
-            </section>
-            <section id="collaborate" class="playlist">
-                <h2>Team Collaboration</h2>
+            <div style="clear: both;"></div>
+            <section id="empathizing" class="playlist">
+                <h2>Empathizing</h2>
                 <p>Discover how to build a team culture of psychological safety, inclusion, flexibility and high performance.</p>
                 <div class="cards">
-                    <a href="#" target="_blank">
-                        <h3>Safety</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>Building Trust</h3>
+                        <p>Create a psychologically safe environment where people can speak up, make mistakes, and bring their full selves to work.</p>
+                        <span class="start-btn">Prepare</span>
                     </a>
-                    <a href="#" target="_blank">
-                        <h3>Team Plays</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>Cultivating Empathy</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis.</p>
+                        <span class="start-btn">Prepare</span>
                     </a>
-                    <a href="#" target="_blank">
-                        <h3>Belonging</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>Becoming a Multiplier</h3>
+                        <p>Create Belonging, Inclusion and Diversity in everything we do.</p>
+                        <span class="start-btn">Prepare</span>
                     </a>
-                    <a href="#" target="_blank">
-                        <h3>Agility</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>Exploring Our Superpowers</h3>
+                        <p>Effectively collaborate with your team, regardless of your physical location.</p>
+                        <span class="start-btn">Prepare</span>
                     </a>
-                    <a href="#" target="_blank">
-                        <h3>Advocacy</h3> 
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>Checking In</h3>
+                        <p>Change is inevitable. Learn what it means to be a Change Agile team, and how to put this into practice.</p>
+                        <span class="start-btn">Prepare</span>
                     </a>
                 </div>
             </section>
-            <div class="underline"></div>
-            <section id="lead" class="playlist">
-                <h2>People Leadership</h2>
+            <div style="clear: both;"></div>
+            <section id="communicating" class="playlist">
+                <h2>Communicating</h2>
                 <p>Enable your team to grow and perform at their best.</p>
                 <div class="cards">
-                    <a href="#" target="_blank">
-                        <h3>People Leader</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                    <a class="modal__trigger" ref="#" target="_blank">
+                        <h3>Team Effectiveness</h3>
+                        <p>Whether you are an experienced People Leader or a first time Manager, develop your team to be best they can be. </p>
+                        <span class="start-btn">Prepare</span>
                     </a>
-                    <a href="#" target="_blank">
-                        <h3>Leading Teams</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae!</p>
-                        <span class="start-btn">Start</span>
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>Better Conversations</h3>
+                        <p>Lead and manage a diverse, distributed team.</p>
+                        <span class="start-btn">Prepare</span>
+                    </a>
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>Behaviroal Styles</h3>
+                        <p>Lead and manage a diverse, distributed team.</p>
+                        <span class="start-btn">Prepare</span>
+                    </a>
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>Impactful Conversations</h3>
+                        <p>Lead and manage a diverse, distributed team.</p>
+                        <span class="start-btn">Prepare</span>
+                    </a>
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>Team Health Monitor</h3>
+                        <p>Lead and manage a diverse, distributed team.</p>
+                        <span class="start-btn">Prepare</span>
                     </a>
                 </div>
             </section>
-            
-        </section>
-        
-
-    </main>
-</body>
-</html>
+            <div style="clear: both;"></div>
+            <section id="belonging" class="playlist">
+                <h2>Belonging</h2>
+                <p>Enable your team to grow and perform at their best.</p>
+                <div class="cards">
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>Gender Bias Conversation</h3>
+                        <p>Whether you are an experienced People Leader or a first time Manager, develop your team to be best they can be. </p>
+                        <span class="start-btn">Prepare</span>
+                    </a>
+                    <a class="modal__trigger" href="#" target="_blank">
+                        <h3>BIDS Conversation</h3>
+                        <p>Lead and manage a diverse, distributed team.</p>
+                        <span class="start-btn">Prepare</span>
+                    </a>
+                </div>
+            </section>
+            <div class="page-end" style="clear: both;"></div>
+        </main>
+        <script src="main.js"></script>
+    </div>
+    
+</div>
