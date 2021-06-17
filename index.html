@@ -1,547 +1,478 @@
-<!DOCTYPE html>
 <div class="html">
     <div class="head">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Team Plays</title>
-        <style>
-            html, .body, div, span, applet, object, iframe,
-            h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-            a, abbr, acronym, address, big, cite, code,
-            del, dfn, em, img, ins, kbd, q, s, samp,
-            small, strike, strong, sub, sup, tt, var,
-            b, u, i, center,
-            dl, dt, dd, ol, ul, li,
-            fieldset, form, label, legend,
-            table, caption, tbody, tfoot, thead, tr, th, td,
-            article, aside, canvas, details, embed, 
-            figure, figcaption, footer, header, hgroup, 
-            menu, nav, output, ruby, section, summary,
-            time, mark, audio, video {
-                margin: 0;
-                padding: 0;
-                border: 0;
-                font: inherit;
-                vertical-align: baseline;
-            }
-            /* HTML5 display-role reset for older browsers */
-            article, aside, details, figcaption, figure, 
-            footer, header, hgroup, menu, nav, section {
-                display: block;
-            }
-
-            ol, ul {
-                list-style: none;
-            }
-            blockquote, q {
-                quotes: none;
-            }
-            blockquote:before, blockquote:after,
-            q:before, q:after {
-                content: '';
-                content: none;
-            }
-            table {
-                border-collapse: collapse;
-                border-spacing: 0;
-            }
-
-            /* apply a natural box layout model to all elements, but allowing components to change */
-            html {
-                -webkit-box-sizing: border-box;
-                        box-sizing: border-box;
-                font-size: 62.5%;
-            }
-            *, *:before, *:after {
-                -webkit-box-sizing: inherit;
-                        box-sizing: inherit;
-            }
-
-            /* cornerstone reset */
-            .widgetDropped {
-                margin: 0;
-            }
-
-            #mainContainer {
-                padding: 0 !important;
-            }
-            
-            div#ctl00_pnlBR {
-                height: 0;
-            }
-            /********** Mobile-First: Base Style ***********/
-            :root {
-                --grad-one: linear-gradient(150deg, rgba(0,119,192,1) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
-                --primary-blue: #2062AF;
-                --primary-purple: #6F2C91;  
-                --primary-pink: #A52868;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-            }
-
-            .body {
-                line-height: 1.5;
-                font-size: 1.6rem;
-                font-family: Arial, Helvetica, sans-serif;
-                color: #424242;
-
-            }
-
-            .header {
-                padding: 3.5rem;
-                background: #0077C0;
-                color: #fff;
-            }
-
-            main {
-                padding: 0 3.5rem;
-            }
-
-            .nav,
-            h1 {
-                padding: 3.5rem;
-            }
-
-            .nav a {
-                font-weight: bolder;
-            }
-
-            .nav a:hover {
-                background: linear-gradient(150deg, rgba(0,119,192,1) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
-                background: var(--grad-one);
-                color: #fff !important;
-            }
-
-            .nav p {
-                margin-top: 2rem;
-            }
-
-            #teaming-link {
-                color: #0077C0;
-            }
-
-            #empathizing-link {
-                color: #4156A6
-            }
-
-
-            #communicating-link {
-                color:#6F2C91;
-            }
-
-            #belonging-link {
-                color: #9D2872;
-            }
-
-            h1 {
-                font-size: 3.5rem;
-                font-weight: bolder;
-                padding: 0;
-            }
-
-            h2 {
-                font-size: 4rem;
-            }
-
-            h3 {
-                font-size: 2.5rem;
-            }
-
-            h4 {
-                font-size: 2rem;
-            }
-
-            h1, h2, h3 {
-                line-height: 1;
-            }
-
-            .playlist {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-                padding-bottom: 1rem;
-            }
-
-            .page-end {
-                margin-bottom: 30rem;
-            }
-
-            .cards .modal__trigger {
-                position: relative;
-                float: left;
-                margin: 0.6rem;
-                height: 24rem;
-                text-decoration: none;
-                padding: 2rem;
-                color: white;
-                border-radius: 10px;
-            }
-
-            .cards h3 {
-                font-weight: bolder;
-                color: white;
-            }
-
-            .cards p {
-                padding-top: 0.5rem;
-                line-height: 1.3;
-                font-size: 1.6rem;
-            }
-
-            #teaming a {
-                background: #0077C0;
-            }
-
-            #teaming h2 {
-                color:#0077C0;
-                margin-top: 0;
-            }
-
-            #empathizing a {
-                background: #4156A6; 
-            }
-
-            #empathizing h2 {
-                color: #4156A6;
-            }
-
-            #communicating a {
-                background:#6F2C91;
-            }
-
-            #communicating h2 {
-                color:#6F2C91;
-            }
-
-            #belonging a {
-                background:#9D2872;
-            }
-
-            #belonging h2 {
-                color:#9D2872;
-            }
-
-            .cards a:first-child {
-                margin-left: 0;
-            }
-
-            .cards .modal__trigger:hover {
-                background: linear-gradient(150deg, rgb(51, 141, 197) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%) !important;
-                background: var(--grad-one) !important;
-            }
-
-            .start-btn {
-                position: absolute;
-                bottom: 2.2rem;
-                width: 80%;
-                margin-top: 1rem;
-                padding: 1rem;
-                border: 0.2rem #fff solid;
-                border-radius: 1rem;
-                text-align: center;
-                font-size: 1.6rem;
-                font-weight: bold;
-            }
-
-            /********** Desktop ***********/
-            @media (min-width: 970px) {
-                .body {
-                    font-size: 2rem;
-                }
-                
-                main,
-                .nav,
-                .header div {
-                    width: 100rem;
-                    margin: auto;
-                }
-
-                .nav {
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: flex;
-                    -webkit-box-orient: vertical;
-                    -webkit-box-direction: normal;
-                        -ms-flex-direction: column;
-                            flex-direction: column;
-                    -webkit-box-pack: center;
-                        -ms-flex-pack: center;
-                            justify-content: center;
-                    height: 300px;
-                }
-
-                .header {
-                    padding: 10rem;
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: flex;
-                    -webkit-box-align: center;
-                        -ms-flex-align: center;
-                            align-items: center;
-                }
-
-                #LC {
-                    margin-bottom: 2rem;
-                    margin-left: 0.6rem;
-                    font-size: 3rem;
-                }
-
-                h1 {
-                    font-size: 10rem;
-                    line-height: 1;
-                }
-
-                h2 {
-                    font-size: 6.315rem;
-                    margin-bottom: 1rem;
-                    margin-top: 12.5rem;
-                }
-
-                h3 {
-                    font-size: 2.5rem;
-                }
-
-                h4 {
-                    font-size: 3.554rem;
-                }
-
-                .cards {
-                    margin-top: 2rem;
-                }
-
-                .cards .modal__trigger {
-                    width: 22rem;
-                    line-height: 1;
-                }
-
-                .start-btn {
-                    margin-top: 1.6rem;
-                }
-            }
-            /* IE9+ CSS */
-            @media screen and (min-width:0\0) and (min-resolution: +72dpi) {
-
-                .nav a:hover {
-                    background: rgb(51, 141, 197);
-                    background: linear-gradient(150deg, rgb(51, 141, 197) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
-                    color: #fff !important;
-                }
-
-                .cards .modal__trigger:hover {
-                    background: rgb(51, 141, 197) !important;
-                    background: linear-gradient(150deg, rgb(51, 141, 197) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%) !important;
-                }
-
-                .playlist { 
-                    width: 90rem;
-                    margin: auto;
-                }
-
-                .cards {
-                    display: -ms-flexbox;
-                    -ms-flex-wrap: wrap;
-                }
-
-                .cards .modal__trigger {
-                    margin: 0.5rem;
-                }
-            }
-        </style>
-        
         <link rel="stylesheet" href="main.css">
+        <style>
+            
+        </style>
     </div>
     <div class="body">
         <div class="header-wrapper">
             <div class="header">
                 <div>
-                    <h1><div id="LC">Leadership & Culture</div>Team Plays</h1>
+                    <h1><div id="LC">Leadership &amp; Culture</div>Team Plays</h1>
                 </div>
             </div>
-            <div class=nav>
-                <p>What is this and how does it relate to People Foundations? Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis, quo ipsum enim ab odio quasi praesentium beatae! </p> <br>
+            <div class="nav">
                 <p>
-                    Run our <a id="teaming-link" href="#teaming">Teaming</a>, <a id="empathizing-link" href="#empathizing">Empathizing</a>, <a id="communicating-link" href="#communicating">Communicating</a>,
-                    <a id="belonging-link" href="#belonging">Belonging</a> team plays below! 
+                    Explore our <a class="link" id="teaming-link" href="#teaming">Teaming</a>, <a class="link" id="empathizing-link" href="#empathizing">Empathizing</a>, <a class="link" id="communicating-link" href="#communicating">Communicating</a>, and <a class="link" id="belonging-link" href="#belonging">Belonging</a> team plays together. 
                 </p>
             </div>
         </div>
         <main>
+            <div class="container">
             <section id="teaming" class="playlist">
                 <h2>Teaming</h2>
-                <p>Explore your own development and impact.</p>
                 <div class="cards">
-                    <a class="modal__trigger" data-modal="#modal__one" href="#!" target="_blank">
-                        <h3>Finding Purpose</h3>
-                        <p>Your self-development starts with you. Be proactive about your development by cultivating a growth mindset and creating a culture of feedback.</p>
+                    <a class="link modal__trigger" data-modal="#modal__one" href="#" target="_blank" href="" target="_blank" style="transform: none">
+                        <h3>Core Competencies</h3>
+                        <p>Do you live and Breathe ResMed's core competencies?</p>
                         <span class="start-btn">Prepare</span>
                     </a>
                     <div id="modal__one" class="modal modal__bg" role="dialog" aria-hidden="true">
                         <div class="modal__dialog">
                             <div class="modal__content">
-                                <h1>Modal</h1>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quasi odio libero laborum? Nulla alias perspiciatis harum accusantium non reiciendis, aspernatur fuga vitae repudiandae fugit architecto impedit. Consectetur, aut saepe.</p>
-                                
+                                <header>
                                 <!-- modal close button -->
-                                <a href="" class="modal__close demo-close">
-                                    <svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
-                                </a>
-                                
+                                    <a href="" class="modal__close demo-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" viewBox="0 0 36.938 38.933">
+                                            <defs>
+                                                <linearGradient id="header-shape-gradient" x2="0.35" y2="1">
+                                                    <stop offset="0%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="35%" stop-color="var(--color-stop-two)"></stop>
+                                                    <stop offset="70%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="100%" stop-color="var(--color-stop-four)"></stop>
+                                                </linearGradient>
+                                            </defs>
+                                            <g id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" style="isolation: isolate">
+                                                <path id="Icon_ionic-ios-close-2" data-name="Icon ionic-ios-close" d="M34.131,30.755,47.324,16.846a3.4,3.4,0,0,0,0-4.609,2.993,2.993,0,0,0-4.372,0L29.759,26.146,16.566,12.237a2.993,2.993,0,0,0-4.372,0,3.375,3.375,0,0,0,0,4.609L25.387,30.755,12.194,44.664a3.375,3.375,0,0,0,0,4.609,2.993,2.993,0,0,0,4.372,0L29.759,35.364,42.952,49.274a2.993,2.993,0,0,0,4.372,0,3.4,3.4,0,0,0,0-4.609Z" transform="translate(-11.285 -11.289)" fill="#fff" style="mix-blend-mode: darken;isolation: isolate"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <h2>Core Competencies</h2>
+                                </header>
+                                <div style="display: block;" class="modal__body">
+                                    <p> At ResMed we are all leaders, team players, innovative, customer-centric and inclusive. Explore what this means as a team.
+                                    </p>
+                                    <h3>Preparation</h3>
+                                    <p>This play will take <b>50 minutes</b> to complete.</p>
+                                    <h3>Guidance</h3>
+                                    <ol>
+                                        <li>Schedule a 50 minute Zoom session.</li>
+                                        <li>Select a team leader to share the screen and to click on the thumb buttons (depending on how the team votes for each competency).</li>
+                                        <li>The leader reads the behavior description and team members vote with a thumbs up, thumbs down or thumbs sideways within Zoom (all cameras need to be on).</li>
+                                        <li>Leader clicks on "not sure" for a behavior description of "needs focus" if there isn't much alignment on a competency.</li>
+                                        <li>Once the team has aligned, the leader clicks the appropriate button.</li>
+                                        <li>At the end of the session, vote on two areas of focus for the next quarter.</li>
+                                    </ol>
+                                    <button onclick="window.open('https://learninghub.resmed.com/us/core-comps/')" type="button">Launch</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <a class="modal__trigger" data-modal="#modal__two" href="#!" target="_blank">
-                        <h3>Operating Principles</h3>
-                        <p>Set yourself up for success by finding the environment that works best for you.</p>
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/your-team-WHY.pdf" target="_blank">
+                        <h3>Your Team WHY</h3>
+                        <p>Why does your team exist? Why do you get out of bed in the morning? Why should anyone care?</p>
+                        <span class="start-btn">Play</span>
+                    </a>
+                    
+                    <!-- <div id="modal__two" class="modal modal__bg" role="dialog" aria-hidden="true">
+                        <div class="modal__dialog">
+                            <div class="modal__content">
+                                <header>
+                                    <a href="" class="modal__close demo-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" viewBox="0 0 36.938 38.933">
+                                            <defs>
+                                                <linearGradient id="header-shape-gradient" x2="0.35" y2="1">
+                                                    <stop offset="0%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="35%" stop-color="var(--color-stop-two)"></stop>
+                                                    <stop offset="70%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="100%" stop-color="var(--color-stop-four)"></stop>
+                                                </linearGradient>
+                                            </defs>
+                                            <g id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" style="isolation: isolate">
+                                                <path id="Icon_ionic-ios-close-2" data-name="Icon ionic-ios-close" d="M34.131,30.755,47.324,16.846a3.4,3.4,0,0,0,0-4.609,2.993,2.993,0,0,0-4.372,0L29.759,26.146,16.566,12.237a2.993,2.993,0,0,0-4.372,0,3.375,3.375,0,0,0,0,4.609L25.387,30.755,12.194,44.664a3.375,3.375,0,0,0,0,4.609,2.993,2.993,0,0,0,4.372,0L29.759,35.364,42.952,49.274a2.993,2.993,0,0,0,4.372,0,3.4,3.4,0,0,0,0-4.609Z" transform="translate(-11.285 -11.289)" fill="#fff" style="mix-blend-mode: darken;isolation: isolate"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <h2>Your Team WHY</h2>
+                                </header>
+                                <div style="display: block;" class="modal__body">
+                                    <p>Why does your team exist? Why do you get out of bed in the morning? Why should anyone care?
+                                    </p>
+                                    <p>Find your WHY and communicate your team purpse.</p>
+                                    <h3>Preparation</h3>
+                                    <p>This play will take <b>50 minutes</b> to complete.</p>
+                                    <h4>What I need:</h4>
+                                    <ul>
+                                        <li>Annotation tool an Zoom.</li>
+                                        <li>Review<a href="">the play</a>.</li>
+                                    </ul>
+                                    <h3>Guidance</h3>
+                                    <ol>
+                                        <li>Schedule a 50 minute Zoom session.</li>
+                                        <li>Pre-work: team members should watch this 4 minute<a href="">Start with WHY</a> video.</li>
+                                        <li>Optional: team members can also watch this 7 minute <a href="">Start with WHY</a> book review.</li>
+                                    </ol>
+                                    <button onclick="window.open('https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/your-team-WHY.pdf')" type="button">PLAY</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  -->
+                
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/living-into-values.pdf" target="_blank">
+                        <h3>Living into Our Values</h3>
+                        <p>Do you know what your values are? Do you know what your teammates value?</p>
+                        <span class="start-btn">Play</span>
+                    </a>
+                    <!-- <div id="modal__three" class="modal modal__bg" role="dialog" aria-hidden="true">
+                        <div class="modal__dialog">
+                            <div class="modal__content">
+                                <header>
+                                    <a href="" class="modal__close demo-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" viewBox="0 0 36.938 38.933">
+                                            <defs>
+                                                <linearGradient id="header-shape-gradient" x2="0.35" y2="1">
+                                                    <stop offset="0%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="35%" stop-color="var(--color-stop-two)"></stop>
+                                                    <stop offset="70%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="100%" stop-color="var(--color-stop-four)"></stop>
+                                                </linearGradient>
+                                            </defs>
+                                            <g id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" style="isolation: isolate">
+                                                <path id="Icon_ionic-ios-close-2" data-name="Icon ionic-ios-close" d="M34.131,30.755,47.324,16.846a3.4,3.4,0,0,0,0-4.609,2.993,2.993,0,0,0-4.372,0L29.759,26.146,16.566,12.237a2.993,2.993,0,0,0-4.372,0,3.375,3.375,0,0,0,0,4.609L25.387,30.755,12.194,44.664a3.375,3.375,0,0,0,0,4.609,2.993,2.993,0,0,0,4.372,0L29.759,35.364,42.952,49.274a2.993,2.993,0,0,0,4.372,0,3.4,3.4,0,0,0,0-4.609Z" transform="translate(-11.285 -11.289)" fill="#fff" style="mix-blend-mode: darken;isolation: isolate"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <h2>Living into Our Values</h2>
+                                </header>
+                                <div style="display: block;" class="modal__body">
+                                    <p>Do you know what your values are? Can you name them?
+                                    </p>
+                                    <p>How well do you understand the values of your teammates?</p>
+                                    <h3>Preparation</h3>
+                                    <p>This play will take <b>50 minutes</b> to complete.</p>
+                                    <h4>What I need:</h4>
+                                    <ul>
+                                        <li>Annotation tool an Zoom.</li>
+                                        <li>Review<a href="">the play</a>.</li>
+                                    </ul>
+                                    <h3>Guidance</h3>
+                                    <ol>
+                                        <li>Schedule a 50 minute Zoom session.</li>
+                                        <li>Pre-work: Watch Brene Brown's <a href="">Dare to Lead</a>.</li>
+                                        <li>Pre-work: each team member should complete <a href="">Exercise 1 and 2</a> before the session.</li>
+                                        <li>Optional pre-work: Read Brene Brown's "Dare to Lead" pages 185-217.</li>
+                                    </ol>
+                                    <button onclick="window.open('https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/living-into-values.pdf')" type="button">PLAY</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <a class="link" data-modal="#modal__four" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/ways-of-working-a.pdf" target="_blank">
+                        <h3>Ways of Working</h3>
+                        <p>Do you know your teammates preferred working styles?</p>
+                        <span class="start-btn">Play</span>
+                    </a>
+                    <!-- <div id="modal__four" class="modal modal__bg" role="dialog" aria-hidden="true">
+                        <div class="modal__dialog">
+                            <div class="modal__content">
+                                <header>
+                                    <a href="" class="modal__close demo-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" viewBox="0 0 36.938 38.933">
+                                            <defs>
+                                                <linearGradient id="header-shape-gradient" x2="0.35" y2="1">
+                                                    <stop offset="0%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="35%" stop-color="var(--color-stop-two)"></stop>
+                                                    <stop offset="70%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="100%" stop-color="var(--color-stop-four)"></stop>
+                                                </linearGradient>
+                                            </defs>
+                                            <g id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" style="isolation: isolate">
+                                                <path id="Icon_ionic-ios-close-2" data-name="Icon ionic-ios-close" d="M34.131,30.755,47.324,16.846a3.4,3.4,0,0,0,0-4.609,2.993,2.993,0,0,0-4.372,0L29.759,26.146,16.566,12.237a2.993,2.993,0,0,0-4.372,0,3.375,3.375,0,0,0,0,4.609L25.387,30.755,12.194,44.664a3.375,3.375,0,0,0,0,4.609,2.993,2.993,0,0,0,4.372,0L29.759,35.364,42.952,49.274a2.993,2.993,0,0,0,4.372,0,3.4,3.4,0,0,0,0-4.609Z" transform="translate(-11.285 -11.289)" fill="#fff" style="mix-blend-mode: darken;isolation: isolate"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <h2>Ways of Working</h2>
+                                </header>
+                                <div style="display: block;" class="modal__body">
+                                    <p>Do you know your teammates preferred working styles?
+                                    </p>
+                                    <h3>Preparation</h3>
+                                    <p>This play will take <b>15 minutes</b> to complete.</p>
+                                    <h4>What I need:</h4>
+                                    <ul>
+                                        <li>Annotation tool an Zoom.</li>
+                                        <li>Review<a href="">the play</a>.</li>
+                                    </ul>
+                                    <h3>Guidance</h3>
+                                    <ol>
+                                        <li>Schedule a 15 minute Zoom session.</li>
+                                        <li>Post-work: Revist on a regular basis or after team changes.</li>
+                                    </ol>
+                                    <button onclick="window.open('https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/ways-of-working-a.pdf')" type="button">PLAY</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <a class="link modal__trigger" data-modal="#modal__two" href="#" target="_blank" style="transform: none">
+                        <h3>Remote Team Culture</h3>
+                        <p>How can you keep your culture strong while working in this crazy world?</p>
                         <span class="start-btn">Prepare</span>
                     </a>
                     <div id="modal__two" class="modal modal__bg" role="dialog" aria-hidden="true">
                         <div class="modal__dialog">
                             <div class="modal__content">
-                                <h1>Operating Principles</h1>
-                                <p>How can you work together as a team more effectively from the start? <br> 
-                                    Operating Principles provide a structure for the team to draft 4-6 ground rules everyone can agree to abide by.
-                                </p>
-                                <h2>Preparation</h2>
-                                <p>This play will take <b>20 minutes</b> to complete.</p>
-                                <h3>What I need:</h3>
-                                <ul>
-                                    <li>Annotation tool on Zoom.</li>
-                                    <li><a href="">Operating Principles</a> play.</li>
-                                </ul>
-                                <h3>How to play:</h3>
-                                <ol>
-                                    <li>Schedule a 20 minute team session.</li>
-                                    <li>Review the <a href="">Operating Principles</a> play before the session. The download is editable so that you can capture the agreed ground rules.</li>
-                                    <li>Follow-up: revisit your commitment to the ground rules on a regular basis or after any changes to the team.</li>
-                                </ol>
-                                <button>PLAY</button>
-
-                                
+                                <header>
                                 <!-- modal close button -->
-                                <a href="" class="modal__close demo-close">
-                                    <svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
-                                </a>
-                                
+                                    <a href="" class="modal__close demo-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" viewBox="0 0 36.938 38.933">
+                                            <defs>
+                                                <linearGradient id="header-shape-gradient" x2="0.35" y2="1">
+                                                    <stop offset="0%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="35%" stop-color="var(--color-stop-two)"></stop>
+                                                    <stop offset="70%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="100%" stop-color="var(--color-stop-four)"></stop>
+                                                </linearGradient>
+                                            </defs>
+                                            <g id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" style="isolation: isolate">
+                                                <path id="Icon_ionic-ios-close-2" data-name="Icon ionic-ios-close" d="M34.131,30.755,47.324,16.846a3.4,3.4,0,0,0,0-4.609,2.993,2.993,0,0,0-4.372,0L29.759,26.146,16.566,12.237a2.993,2.993,0,0,0-4.372,0,3.375,3.375,0,0,0,0,4.609L25.387,30.755,12.194,44.664a3.375,3.375,0,0,0,0,4.609,2.993,2.993,0,0,0,4.372,0L29.759,35.364,42.952,49.274a2.993,2.993,0,0,0,4.372,0,3.4,3.4,0,0,0,0-4.609Z" transform="translate(-11.285 -11.289)" fill="#fff" style="mix-blend-mode: darken;isolation: isolate"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <h2>Remote Team Culture</h2>
+                                </header>
+                                <div style="display: block;" class="modal__body">
+                                    <p>Put your team's culture into words to drive alignment and to identify areas of improvement.</p>
+                                    <h3>Preparation</h3>
+                                    <p>This play will take <b>50 minutes</b> to complete.</p>
+                                    <h4>What I need:</h4>
+                                    <ul>
+                                        <li>Annotation tool an Zoom.</li>
+                                        <li>Review<a href="">the play</a>.</li>
+                                    </ul>
+                                    <h3>Guidance</h3>
+                                    <ol>
+                                        <li>Schedule a 50 minute Zoom session.</li>
+                                        <li>Pre-work: Each team member should watch Chris White's 12 minute <a href="https://www.ted.com/talks/chris_white_3_ways_to_create_a_work_culture_that_brings_out_the_best_in_employees">TED talk</a>.</li>
+                                        <li>Annotate on the play as a team together in Zoom. Brainstorm and discuss the most important elements of the culutre that you want to build within each section.</li>
+                                        <li>Ask each teammate to share their most important insight gained during the session.</li>
+                                    </ol>
+                                    <button onclick="window.open('https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/remote-culture-canvas.pdf')" type="button">Play</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <a class="modal__trigger" data-modal="#modal__three" href="#" target="_blank">
-                        <h3>Ways of Working</h3>
-                        <p>Challenge your thinking and question what you can do to be more inclusive.</p>
-                        <span class="start-btn">Prepare</span>
-                    </a>
-                    <div id="modal__three" class="modal modal__bg" role="dialog" aria-hidden="true">
-                        <div class="modal__dialog">
-                            <div class="modal__content">
-                                <h1>Modal</h1>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non magnam asperiores praesentium perferendis molestiae saepe, nobis cum recusandae, ut velit inventore soluta. Quas eius corporis veniam sequi incidunt, perferendis repellendus!.</p>
-                                
-                                <!-- modal close button -->
-                                <a href="" class="modal__close demo-close">
-                                    <svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
-                                </a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <a class="modal__trigger" href="#" target="_blank">
-                        <h3>Creating a Remote Culture</h3>
-                        <p>Work and communicate across cultures.</p>
-                        <span class="start-btn">Prepare</span>
-                    </a>
-                    <a class="modal__trigger" href="#" target="_blank">
-                        <h3>Living Our Values</h3>
-                        <p>Get things done by setting productive and mindful habits.</p>
-                        <span class="start-btn">Prepare</span>
-                    </a>
+                    <!-- <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/Case%20for%20Change.pdf" target="_blank">
+                        <h3>Case for Change</h3>
+                        <p>Are you trying to introduce change or anticipate the impact of a change?</p>
+                        <span class="start-btn">Play</span>
+                    </a> -->
                 </div>
             </section>
             <div style="clear: both;"></div>
             <section id="empathizing" class="playlist">
                 <h2>Empathizing</h2>
-                <p>Discover how to build a team culture of psychological safety, inclusion, flexibility and high performance.</p>
                 <div class="cards">
-                    <a class="modal__trigger" href="#" target="_blank">
-                        <h3>Building Trust</h3>
-                        <p>Create a psychologically safe environment where people can speak up, make mistakes, and bring their full selves to work.</p>
-                        <span class="start-btn">Prepare</span>
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/build-trust.pdf" target="_blank">
+                        <h3>Building <br> Trust</h3>
+                        <p>Are you able to talk about trust with your team? Do you know what is important to each other?</p>
+                        <span class="start-btn">Play</span>
                     </a>
-                    <a class="modal__trigger" href="#" target="_blank">
-                        <h3>Cultivating Empathy</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, impedit nulla corporis quae quaerat eveniet, odit similique mollitia omnis.</p>
-                        <span class="start-btn">Prepare</span>
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/play-superpowers.pdf" target="_blank">
+                        <h3>Explore Team Superpowers</h3>
+                        <p>Are you and your teammates drawing out your most creative selves?</p>
+                        <span class="start-btn">Play</span>
                     </a>
-                    <a class="modal__trigger" href="#" target="_blank">
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/team-checkin.pdf" target="_blank">
+                        <h3>Team <br> Check-In</h3>
+                        <p>Do you know how your team is feeling? Do you check-in with them at the start of your meetings?</p>
+                        <span class="start-btn">Play</span>
+                    </a>
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/Become%20a%20Multiplier.pdf" target="_blank">
                         <h3>Becoming a Multiplier</h3>
-                        <p>Create Belonging, Inclusion and Diversity in everything we do.</p>
+                        <p>Do you make those around you smarter? How do some leaders create intelligence around?</p>
+                        <span class="start-btn">Play</span>
+                    </a>
+                    <a class="link modal__trigger" data-modal="#modal__three" href="https://sypstore.wpengine.com/project/cultivate-empathy-on-your-team/" target="_blank" style="transform: none">
+                        <h3>Cultivating Empathy</h3>
+                        <p>Do you drive change in an empathetic and humane way?</p>
                         <span class="start-btn">Prepare</span>
                     </a>
-                    <a class="modal__trigger" href="#" target="_blank">
-                        <h3>Exploring Our Superpowers</h3>
-                        <p>Effectively collaborate with your team, regardless of your physical location.</p>
-                        <span class="start-btn">Prepare</span>
-                    </a>
-                    <a class="modal__trigger" href="#" target="_blank">
-                        <h3>Checking In</h3>
-                        <p>Change is inevitable. Learn what it means to be a Change Agile team, and how to put this into practice.</p>
-                        <span class="start-btn">Prepare</span>
+                    <div id="modal__three" class="modal modal__bg" role="dialog" aria-hidden="true">
+                        <div class="modal__dialog">
+                            <div class="modal__content">
+                                <header>
+                                <!-- modal close button -->
+                                    <a href="" class="modal__close demo-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" viewBox="0 0 36.938 38.933">
+                                            <defs>
+                                                <linearGradient id="header-shape-gradient" x2="0.35" y2="1">
+                                                    <stop offset="0%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="35%" stop-color="var(--color-stop-two)"></stop>
+                                                    <stop offset="70%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="100%" stop-color="var(--color-stop-four)"></stop>
+                                                </linearGradient>
+                                            </defs>
+                                            <g id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" style="isolation: isolate">
+                                                <path id="Icon_ionic-ios-close-2" data-name="Icon ionic-ios-close" d="M34.131,30.755,47.324,16.846a3.4,3.4,0,0,0,0-4.609,2.993,2.993,0,0,0-4.372,0L29.759,26.146,16.566,12.237a2.993,2.993,0,0,0-4.372,0,3.375,3.375,0,0,0,0,4.609L25.387,30.755,12.194,44.664a3.375,3.375,0,0,0,0,4.609,2.993,2.993,0,0,0,4.372,0L29.759,35.364,42.952,49.274a2.993,2.993,0,0,0,4.372,0,3.4,3.4,0,0,0,0-4.609Z" transform="translate(-11.285 -11.289)" fill="#fff" style="mix-blend-mode: darken;isolation: isolate"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <h2>Cultivating Empathy</h2>
+                                </header>
+                                <div style="display: block;" class="modal__body">
+                                    <p>Drive change in a human-led way with these tips.</p>
+                                    <h3>Preparation</h3>
+                                    <p>This session will take <b>20 minutes</b> to complete.</p>
+                                    <h4>What I need:</h4>
+                                    <ul>
+                                        <li>Annotation tool an Zoom.</li>
+                                    </ul>
+                                    <h3>Guidance</h3>
+                                    <ol>
+                                        <li>Schedule a 20 minute Zoom session.</li>
+                                        <li>Pre-work: Each team member should watch Brene Brown's  <a href="https://www.youtube.com/watch?v=1Evwgu369Jw">Empathy talk</a>.</li>
+                                        <li>Read through the 5 tips as a team.</li>
+                                        <li>Discuss wheather the tips resonate with you and any other ideas that the team might like to experiment with to buld greater team empathy.</li>
+                                    </ol>
+                                    <button onclick="window.open('https://sypstore.wpengine.com/project/cultivate-empathy-on-your-team/')" type="button">Launch</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/The%20Resilience%20Plan.pdf" target="_blank">
+                        <h3>The Resilience Plan</h3>
+                        <p>How can the 4S's (Self, Situation, Supports, Strategies) help us improve resilience?</p>
+                        <span class="start-btn">Play</span>
                     </a>
                 </div>
             </section>
             <div style="clear: both;"></div>
             <section id="communicating" class="playlist">
                 <h2>Communicating</h2>
-                <p>Enable your team to grow and perform at their best.</p>
                 <div class="cards">
-                    <a class="modal__trigger" ref="#" target="_blank">
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/play-team-effectiveness-pulse-information-pdf.pdf" target="_blank">
                         <h3>Team Effectiveness</h3>
-                        <p>Whether you are an experienced People Leader or a first time Manager, develop your team to be best they can be. </p>
-                        <span class="start-btn">Prepare</span>
+                        <p>Need a team work and communication diagnostic?</p>
+                        <span class="start-btn">Play</span>
                     </a>
-                    <a class="modal__trigger" href="#" target="_blank">
+                    <a class="link modal__trigger" data-modal="#modal__four" href="#" target="_blank" style="transform: none">
                         <h3>Better Conversations</h3>
-                        <p>Lead and manage a diverse, distributed team.</p>
+                        <p>What is the SCARF modal and how can it help us better regulate our emotions?</p>
                         <span class="start-btn">Prepare</span>
                     </a>
-                    <a class="modal__trigger" href="#" target="_blank">
-                        <h3>Behaviroal Styles</h3>
-                        <p>Lead and manage a diverse, distributed team.</p>
-                        <span class="start-btn">Prepare</span>
-                    </a>
-                    <a class="modal__trigger" href="#" target="_blank">
-                        <h3>Impactful Conversations</h3>
-                        <p>Lead and manage a diverse, distributed team.</p>
-                        <span class="start-btn">Prepare</span>
-                    </a>
-                    <a class="modal__trigger" href="#" target="_blank">
+                    <div id="modal__four" class="modal modal__bg" role="dialog" aria-hidden="true">
+                        <div class="modal__dialog">
+                            <div class="modal__content">
+                                <header>
+                                <!-- modal close button -->
+                                    <a href="" class="modal__close demo-close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="28" viewBox="0 0 36.938 38.933">
+                                            <defs>
+                                                <linearGradient id="header-shape-gradient" x2="0.35" y2="1">
+                                                    <stop offset="0%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="35%" stop-color="var(--color-stop-two)"></stop>
+                                                    <stop offset="70%" stop-color="var(--color-stop-three)"></stop>
+                                                    <stop offset="100%" stop-color="var(--color-stop-four)"></stop>
+                                                </linearGradient>
+                                            </defs>
+                                            <g id="Icon_ionic-ios-close" data-name="Icon ionic-ios-close" style="isolation: isolate">
+                                                <path id="Icon_ionic-ios-close-2" data-name="Icon ionic-ios-close" d="M34.131,30.755,47.324,16.846a3.4,3.4,0,0,0,0-4.609,2.993,2.993,0,0,0-4.372,0L29.759,26.146,16.566,12.237a2.993,2.993,0,0,0-4.372,0,3.375,3.375,0,0,0,0,4.609L25.387,30.755,12.194,44.664a3.375,3.375,0,0,0,0,4.609,2.993,2.993,0,0,0,4.372,0L29.759,35.364,42.952,49.274a2.993,2.993,0,0,0,4.372,0,3.4,3.4,0,0,0,0-4.609Z" transform="translate(-11.285 -11.289)" fill="#fff" style="mix-blend-mode: darken;isolation: isolate"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                    <h2>Better Conversations</h2>
+                                </header>
+                                <div style="display: block;" class="modal__body">
+                                    <p>Research has repeatedly shown that labeling emotions helps to dampen the limbic system.</p>
+                                    <p>SCARF is easy to remember and can help us notice a threat occuring in real time. It gives us the language to label and better regulate our emotions.</p>
+                                    <ul>
+                                        <li><b>S</b>tatus is about the relative importance to others</li>
+                                        <li><b>C</b>ertainty is about being able to predict outcomes</li>
+                                        <li><b>A</b>utonomy provides a sense of control over events</li>
+                                        <li><b>R</b>elatedness is a sense of safety with others, friend v foe</li>
+                                        <li><b>F</b>airness is a perception of fiar exchange between people</li>
+                                    </ul>
+                                    <h3>Preparation</h3>
+                                    <p>This session will take <b>50 minutes</b> to complete.</p>
+                                    <h4>What I need:</h4>
+                                    <p>This is a facilitated workshop. Connect with your local People Development Team or People Buisness Partner to discuss your teams needs. Click on the information link below for a greater understanding of how SCARF may benefit you and your team.</p>
+                                    <h3>Guidance</h3>
+                                    <ol>
+                                        <li>Watch <a href="">SCARF Animation</a>.</li>
+                                        <li>Watch <a href="">Learning about the brain changes everything</a>.</li>
+                                        <li>Read <a href="https://www.youtube.com/watch?v=1Evwgu369Jw">Managing with the brain in mind</a>.</li>
+                                        <li>Take the <a href="">SCARF assessment</a>.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="link" href="https://www.atlassian.com/team-playbook/health-monitor#" target="_blank">
                         <h3>Team Health Monitor</h3>
-                        <p>Lead and manage a diverse, distributed team.</p>
+                        <p>Have you ever wondered whether your team can work better together? ~50 minutes</p>
+                        <span class="start-btn">Launch</span>
+                    </a>
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/Sound%20Like,%20Look%20Like,%20Feel%20Like.pdf" target="_blank">
+                        <h3>Sound Like, Look Like, Feel Like</h3>
+                        <p>Can we use our senses to describe empathy to one another?</p>
+                        <span class="start-btn">Play</span>
+                    </a>
+                    <!-- <a class="link modal__trigger" data-modal="#modal__one" href="#" target="_blank" href="" target="_blank" style="transform: none">
+                        <h3>Impactful Conversations</h3>
+                        <p>Lead and manage a flexible, diverse and distributed team.</p>
                         <span class="start-btn">Prepare</span>
+                    </a> -->
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/Highs%20and%20Lows.pdf" target="_blank">
+                        <h3>Highs and Lows</h3>
+                        <p>Does your team feel like family? Share your weekly experiences.</p>
+                        <span class="start-btn">Play</span>
+                    </a>
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/Communication%20Plan.pdf" target="_blank">
+                        <h3>Communication Plan</h3>
+                        <p>Hoping to get your message delivered to target groups? Unsure of where to begin?</p>
+                        <span class="start-btn">Play</span>
+                    </a>
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/Highs%20and%20Lows.pdf" target="_blank">
+                        <h3>Tell Your Own Story</h3>
+                        <p>What is your story? How do you tell it?</p>
+                        <span class="start-btn">Play</span>
                     </a>
                 </div>
             </section>
             <div style="clear: both;"></div>
+            </div>
             <section id="belonging" class="playlist">
                 <h2>Belonging</h2>
-                <p>Enable your team to grow and perform at their best.</p>
                 <div class="cards">
-                    <a class="modal__trigger" href="#" target="_blank">
-                        <h3>Gender Bias Conversation</h3>
-                        <p>Whether you are an experienced People Leader or a first time Manager, develop your team to be best they can be. </p>
-                        <span class="start-btn">Prepare</span>
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/BIDs%20conversation%20starters.pdf" target="_blank">
+                        <h3>BID Conversations</h3>
+                        <p>Are you shaping the culture with Belonging, Inclusion and Diversity Conversations? </p>
+                        <span class="start-btn">Play</span>
                     </a>
-                    <a class="modal__trigger" href="#" target="_blank">
-                        <h3>BIDS Conversation</h3>
-                        <p>Lead and manage a diverse, distributed team.</p>
-                        <span class="start-btn">Prepare</span>
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/Build%20a%20Storyline.pdf" target="_blank">
+                        <h3>Build a Storyline</h3>
+                        <p>Ever shared a story with one person that was shared with another? Notice how the details change?</p>
+                        <span class="start-btn">Play</span>
+                    </a>
+                    <a class="link" href="https://resmed.csod.com/content/resmed/publications/2604/story_content/external_files/ADKAR%20-Think,%20Pair,%20Share.pdf" target="_blank">
+                        <h3>Think, Pair, Share</h3>
+                        <p>How can we implement change management within our projects?</p>
+                        <span class="start-btn">Play</span>
+                    </a>
+                    <a class="link modal__trigger" data-modal="#modal__one" href="https://leanin.org/50-ways-to-fight-gender-bias" target="_blank">
+                        <h3>Gender Bias Conversation</h3>
+                        <p>How can you help people to recognize and combat bias against women at work? ~50 minutes</p>
+                        <span class="start-btn">Launch</span>
                     </a>
                 </div>
             </section>
-            <div class="page-end" style="clear: both;"></div>
+            <div style="clear: both; margin-bottom: 100rem;"></div>
+            </div>
         </main>
-        <script src="main.js"></script>
     </div>
-    
+    <script src="main.js"></script>
 </div>

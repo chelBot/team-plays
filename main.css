@@ -1,171 +1,693 @@
+html, .body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+}
+
+/* cornerstone reset */
+.widgetDropped {
+    margin: 0;
+}
+
+#mainContainer {
+    padding: 0 !important;
+}
+
+div#ctl00_pnlBR {
+    height: 0;
+}
+/********** Mobile-First: Base Style ***********/
+:root {
+    --grad-one: linear-gradient(150deg, rgba(0,119,192,1) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
+    --primary-blue: #0077c0;
+    --primary-purple: #6F2C91;  
+    --primary-pink: #9D2872;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    line-height: 1.5;
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #424242;
+
+}
+
+.header {
+    padding: 3.5rem;
+    background: #0077c0;
+    background: var(--primary-blue);
+    background-image: linear-gradient(rgba(0,119,192, 0.9), rgba(65,86,166,0.9)), url("ico-2-material@3x.png");
+    background-position: 5% 264%;
+    color: #fff;
+}
+
+main {
+    padding: 0 3.5rem;
+}
+
+.nav {
+    padding: 3.5rem;
+}
+
+.nav a {
+    font-weight: bolder;
+}
+
+.nav .link:hover, 
+.modal__content li a:hover,
+.modal__content button:hover {
+    background: linear-gradient(150deg, rgba(0,119,192,1) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
+    background: var(--grad-one);
+    color: #fff !important;
+    cursor: pointer;
+}
+
+.nav p {
+    margin-top: 2rem;
+}
+
+.nav .link {
+    font-size: 2rem;
+}
+
+#teaming-link {
+    color: #0077c0;
+    color: var(--primary-blue);
+    transition: color 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#empathizing-link {
+    color:  #4156a6; 
+    transition: color 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#communicating-link {
+    color: #6F2C91;
+    color: var(--primary-purple);
+    transition: color 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#belonging-link  {
+    color: #9D2872;
+    color: var(--primary-pink);
+    transition: color 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#header-shape-gradient {
+    --color-stop-one: #0077c0;
+    --color-stop-two: #4156a6;
+    --color-stop-three: #6f2c91;
+    --color-stop-four: #a52868;
+}
+
+.demo-close:hover #Icon_ionic-ios-close-2{
+    fill: url(#header-shape-gradient) !important;
+}
+
+
+h1 {
+    font-size: 6.5rem;
+    font-weight: bolder;
+}
+
+#LC {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1;
+}
+
+.playlist {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+.cards .modal__trigger,
+.cards .link{
+    position: relative;
+    float: left;
+    margin: 0.6rem 1.2rem 0.6rem 0;
+    height: 24rem;
+    text-decoration: none;
+    padding: 2rem;
+    color: white;
+    border-radius: 10px;
+}
+
+.cards h3 {
+    font-weight: bolder;
+    color: white;
+}
+
+.cards p {
+    padding-top: 0.5rem;
+    line-height: 1.3;
+    font-size: 1.6rem;
+}
+
+.modal__content p {
+    margin-top: 0;
+}
+
+#teaming .link {
+    background: #0077c0;
+    background: var(--primary-blue);
+}
+
+#teaming > h2 {
+    color:#0077c0;
+    color: var(--primary-blue);
+}
+
+#empathizing .link {
+    background: #4156A6;
+}
+
+#empathizing > h2 {
+    color: #4156A6;
+    margin-top: 7rem;
+}
+
+#communicating .link {
+    background: #6F2C91;  
+    background: var(--primary-purple);
+}
+
+#communicating > h2 {
+    color: #6F2C91;  
+    color: var(--primary-purple);
+    margin-top: 7rem;
+}
+
+#belonging .link {
+    background:#9D2872;
+    background: var(--primary-pink);
+}
+
+#belonging > h2 {
+    color:#9D2872;
+    color: var(--primary-pink);
+    margin-top: 7rem;
+}
+
+.cards .link:hover{
+    background: linear-gradient(150deg, rgb(51, 141, 197) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #9D2872 100%) !important;
+    background: var(--grad-one) !important;
+}
+
+.start-btn {
+    position: absolute;
+    bottom: 2.2rem;
+    width: 80%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 0.2rem #fff solid;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.cards .link {
+        width: 22rem;
+        line-height: 1;
+    }
+
+.cards section {
+    width: 26rem;
+}
+
+.df-footer {
+    display: none;
+}
+
+/* Modal Styles in Mobile */
+/**
+* Material Modal CSS
+*/
+.modal {
+  will-change: visibility, opacity;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); 
+  transition-delay: 0.5s;
+  /* max-width: 100vw; */
+}
+.modal--active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal--align-top {
+  align-items: flex-start;
+}
+.modal__bg {
+  background: #0e0e0ee0;
+  transition: all 0.1s ease-out;
+}
+.modal__dialog {
+  /* max-width: 600px; */
+  padding: 1.2rem;
+}
+.modal__content {
+  will-change: transform, opacity;
+  position: relative;
+  background: #fff;
+  background-clip: padding-box;
+  box-shadow: 0 12px 15px 0 rgba(0,0,0,0.25);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.modal__content--active {
+  opacity: 1;
+}
+.modal__close {
+  z-index: 1100;
+  cursor: pointer;
+}
+
+.modal__trigger {
+  position: relative;
+  display: inline-block;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modal__trigger--active {
+  z-index: 10;
+}
+
+.modal__trigger:hover {
+  background: #e5d3d6;
+}
+#modal__temp {
+  will-change: transform, opacity;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(150deg, rgba(0,119,192,1) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
+  transform: none;
+  opacity: 1;
+  transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
 
 /**
- * Material Modal CSS
- */
-.modal {
-    will-change: visibility, opacity;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    z-index: 1000;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); 
-    transition-delay: 0.5s;
-  }
-  .modal--active {
-    visibility: visible;
-    opacity: 1;
-  }
-  .modal--align-top {
-    align-items: flex-start;
-  }
-  .modal__bg {
-    background: #00000094;
-    transition: all 0.1s ease-out;
-  }
-  .modal__dialog {
-    max-width: 600px;
-    padding: 1.2rem;
-  }
-  .modal__content {
-    will-change: transform, opacity;
-    position: relative;
-    padding: 2.4rem;
-    background: #fff;
-    background-clip: padding-box;
-    box-shadow: 0 12px 15px 0 rgba(0,0,0,0.25);
-    opacity: 0;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .modal__content--active {
-    opacity: 1;
-  }
-  .modal__close {
-    z-index: 1100;
-    cursor: pointer;
-  }
-  .modal__trigger {
-    position: relative;
-    display: inline-block;
-    padding: 1.2rem 2.4rem;
-    color: rgba(0,0,0,0.7);
-    line-height: 1;
-    cursor: pointer;
-    background: #fff;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .modal__trigger--active {
-    z-index: 10;
-  }
-  .modal__trigger:hover {
-    background: #e5d3d6;
-  }
-  #modal__temp {
-    will-change: transform, opacity;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #ffebee;
-    transform: none;
-    opacity: 1;
-    transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  /**
-   * Demo specific CSS
-   */
-  .body {
-    height: 100vh;
-  }
-  
-  body.modal--open {
-    padding-right: 18px;
-  }
+* Demo specific CSS
+*/
+.body {
+  height: 100vh;
+}
 
-  img {
-    max-width: 100%;
-  }
-  .demo-btns header {
-    padding: 7vh 10vw;
-    background: #ffebee;
-    display: flex;
-    align-items: center;
-  }
-  .demo-btns header h1 {
-    margin: 0;
-    color: rgba(0,0,0,0.54);
-    font-weight: 300;
-  }
-  .demo-btns .info {
-    background: #f44336;
-    padding: 3vh 10vw;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column wrap;
-  }
-  .demo-btns p {
-    text-align: center;
-    color: #fff;
-  }
+body.modal--open {
+  padding-right: 18px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.demo-btns header {
+  padding: 7vh 10vw;
+  background: #ffebee;
+  display: flex;
+  align-items: center;
+}
+
+.demo-btns header h1 {
+  margin: 0;
+  color: rgba(0,0,0,0.54);
+  font-weight: 300;
+}
+
+.demo-btns .info {
+  background: #f44336;
+  padding: 3vh 10vw;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+
+.demo-btns p {
+  text-align: center;
+  color: #fff;
+}
+.demo-btns .link {
+  font-size: 20px;
+}
+
+.demo-btns .link {
+  margin-right: 3px;
+}
+
+@media (max-width: 640px) {
   .demo-btns .link {
-    font-size: 20px;
-  }
-  .demo-btns .modal__trigger {
-    margin-right: 3px;
-  }
-  @media (max-width: 640px) {
-    .demo-btns .modal__trigger {
       margin-bottom: 0.8rem;
+  }
+}
+
+.demo-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.6rem;
+  border-radius: 50%;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.demo-close svg {
+  pointer-events: none;
+  vertical-align: top;
+}
+
+.logo {
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
+  z-index: 2;
+}
+
+.logo img {
+  width: 45px;
+  transform: rotate(0);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.logo img:hover {
+  transform: rotate(180deg) scale(1.1);
+}
+
+.modal__dialog {
+  max-width: 93ch;
+}
+
+.modal__body {
+  padding: 4rem 3rem 3rem 3rem;
+}
+
+.modal__content h2 {
+  margin-right: 4rem;
+}
+
+.modal__content h3 {
+  font-size: 3rem;
+  font-weight: bolder;
+  padding: 4rem 0 1rem 0;
+}
+
+.modal__content h4 {
+  font-size: 2rem;
+  font-weight: bolder;
+  padding: 1rem 0 0 0;
+}
+
+.modal__content p {
+  padding: 0;
+}
+
+.modal__content a {
+  color:#0077c0;
+}
+
+.modal__content ol {
+list-style: decimal;
+margin: 0 2rem;
+}
+
+.modal__content ul {
+list-style: square;
+margin: 0 2rem;
+}
+
+.modal__content button {
+  display: block;
+  margin: 4rem auto 0rem auto;
+  color: white;
+  padding: 2rem 4rem;
+  font-weight: bolder;
+  font-size: 3rem;
+  border: none;
+}
+
+#empathizing button {
+  background: #4156A6;
+}
+
+#teaming header {
+    padding: 1rem 3rem;
+    background: #0077c0;
+    color: #fff;
+}
+
+#teaming .modal__body h3 {
+  color: #0077c0;
+}
+
+#teaming button {
+  background:#0077c0;
+}
+
+#empathizing header {
+  padding: 1rem 3rem;
+  background: #4156A6;
+  color: #fff;
+}
+
+#empathizing .modal__body h3 {
+  color: #4156A6;
+}
+
+#empathizing button {
+  background: #4156A6;
+}
+
+#communicating header {
+  padding: 1rem 3rem;
+  background: #6F2C91;
+  color: #fff;
+}
+
+#communicating .modal__body h3 {
+  color: #6F2C91;
+}
+
+#communicating button {
+  background: #6F2C91;
+}
+
+
+/********** Desktop ***********/
+@media (min-width: 970px) {
+    .body {
+        font-size: 2rem;
     }
-  }
-  .demo-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 1.2rem;
-    padding: 0.6rem;
-    background: rgba(0,0,0,0.3);
-    border-radius: 50%;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .demo-close svg {
-    width: 24px;
-    fill: #fff;
-    pointer-events: none;
-    vertical-align: top;
-  }
-  .demo-close:hover {
-    background: rgba(0,0,0,0.6);
-  }
-  .logo {
-    position: fixed;
-    bottom: 3vh;
-    right: 3vw;
-    z-index: 2;
-  }
-  .logo img {
-    width: 45px;
-    transform: rotate(0);
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .logo img:hover {
-    transform: rotate(180deg) scale(1.1);
-  }
+    
+    main,
+    .nav,
+    .header div {
+        width: 100rem;
+        margin: auto;
+    }
+
+/********** TODO APPLY TO MOBILE ***********/
+/* Modal Styles in Desktop */
+    .demo-close {
+      top: 3rem;
+      right: 5rem;
+    }
+
+    #teaming header,
+    #empathizing header,
+    #communicating header,
+    #belonging header {
+      padding: 4rem 7rem;
+    }
+
+    .modal__body {
+      padding: 4rem 7rem 7rem 7rem;
+    }
+
+    .modal__content h3 {
+      font-size: 3.5rem;
+    }
+
+    .modal__content h4 {
+      font-size: 2.5rem;
+    }
+
+    .modal__content p {
+      font-size: 2rem;
+    }
+
+    .nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        height: 150px;
+    }
+
+    .header {
+        padding: 10rem 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+
+    #LC {
+        margin-bottom: 2rem;
+        margin-left: 0.6rem;
+        font-size: 3rem;
+    }
+
+    h1 {
+        font-size: 10rem;
+        line-height: 1;
+    }
+
+    h2 {
+        font-size: 6.315rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    h4 {
+        font-size: 3.554rem;
+    }
+
+    .cards {
+        margin-top: 2rem;
+    }
+
+    .cards .link{
+        width: 22rem;
+        line-height: 1;
+    }
+
+    .cards section {
+        width: 26rem;
+    }
+
+    .start-btn {
+        margin-top: 1.6rem;
+    }   
+}
+/* IE9+ CSS */
+@media screen and (min-width:0\0) and (min-resolution: +72dpi) {
+
+    .nav a:hover {
+        background: rgb(51, 141, 197);
+        background: linear-gradient(150deg, rgb(51, 141, 197) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%);
+        color: #fff !important;
+    }
+
+    .cards .link:hover {
+        background: rgb(51, 141, 197) !important;
+        background: linear-gradient(150deg, rgb(51, 141, 197) 0%, rgba(65,86,166,1) 37%, rgba(111,44,145,1) 69%, #A52868 100%) !important;
+    }
+
+    .playlist { 
+        width: 90rem;
+        margin: auto;
+    }
+
+    .cards {
+        display: -ms-flexbox;
+        -ms-flex-wrap: wrap;
+    }
+
+    .cards .link {
+        margin: 0.5rem;
+    }
+}
