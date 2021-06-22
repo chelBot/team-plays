@@ -325,7 +325,7 @@ h1, h2, h3 {
   align-items: flex-start;
 }
 .modal__bg {
-  background: #0e0e0ee0;
+  background: rgba(14,14,14,.88);
   transition: all 0.1s ease-out;
 }
 .modal__dialog {
@@ -684,7 +684,7 @@ margin: 0 2rem;
     }
 
     .playlist { 
-        width: 90rem;
+        width: 92rem;
         margin: auto;
     }
 
